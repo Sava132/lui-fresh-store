@@ -1,0 +1,26 @@
+{
+  "name": "project-e-commerce",
+  "version": "1.0.0",
+  "description": "Welcome to **LuiFresh**, a high-end e-commerce interface designed with a focus on modern UI/UX and seamless performance. This project showcases a complete \"Fruitery\" shopping experience.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sava132/lui-fresh-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sava132/lui-fresh-store/issues"
+  },
+  "homepage": "https://github.com/Sava132/lui-fresh-store#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.19.1"
+  }
+}

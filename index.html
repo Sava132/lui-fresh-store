@@ -1,55 +1,256 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuiFresh | Premium Fruit Market</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AETHERIS | New Era</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="glass-header">
+      <div class="logo">AETHERIS</div>
 
-    <header class="header">
-        <div class="logo">Lui<span>Fresh</span></div>
-        <div class="search-bar">
-            <i data-lucide="search"></i>
-            <input type="text" id="searchInput" placeholder="Search for fresh fruits...">
+      <div class="search-box">
+        <input type="text" id="product-search" placeholder="Поиск техники..." />
+        <i class="fas fa-search"></i>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#main">Главная</a>
+        <a href="#shop">Магазин</a>
+        <a href="#cloud">Технологии</a>
+        <a href="#cloud">Cloud +</a>
+      </nav>
+
+      <div
+        class="header-right"
+        style="display: flex; align-items: center; gap: 20px"
+      >
+        <div class="cart-status" onclick="toggleCart()">
+          <i class="fas fa-shopping-basket"></i>
+          <span id="cart-count">0</span>
         </div>
-        <div class="cart-icon" id="cartBtn">
-            <i data-lucide="shopping-cart"></i>
-            <span class="cart-count">0</span>
+
+        <div
+          id="auth-container"
+          style="display: flex; align-items: center; gap: 10px"
+        >
+          <i
+            class="fas fa-user-astronaut"
+            id="auth-btn"
+            onclick="toggleAuthModal()"
+            style="cursor: pointer; font-size: 20px; color: var(--accent)"
+          ></i>
         </div>
+      </div>
     </header>
 
-    <main class="container">
-        <div class="hero">
-            <h1>Premium Fruit Selection</h1>
-            <p>Directly from the farm to your doorstep</p>
+    <main id="main" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>New era of technologies</h1>
+        <p class="subtitle">Aetheris Prime</p>
+        <div class="hero-btns">
+          <button class="btn-glow" onclick="scrollToShop()">
+            Купить сейчас
+          </button>
+          <button class="btn-outline" onclick="scrollToFooter()">
+            Узнать больше
+          </button>
         </div>
-        <div class="products-grid" id="productsGrid"></div>
+      </div>
     </main>
 
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div id="cartBody">
-                <div class="cart-header">
-                    <h3>Your Basket</h3>
-                    <button class="close-btn" id="closeCart">&times;</button>
-                </div>
-                <div id="cartItems" class="cart-items-list"></div>
-                <div class="cart-footer">
-                    <div class="cart-total">
-                        <span>Total:</span>
-                        <span>$<span id="totalPrice">0</span></span>
-                    </div>
-                    <button class="checkout-btn" id="checkoutBtn">Checkout Now</button>
-                </div>
-            </div>
+    <section id="shop" class="shop">
+      <h2 class="section-title">Магазин электроники</h2>
+      <div class="category-group">
+        <h3>Смартфоны</h3>
+        <div id="smartphones-container" class="grid"></div>
+      </div>
+      <div class="category-group">
+        <h3>Компьютеры</h3>
+        <div id="computers-container" class="grid"></div>
+      </div>
+      <div class="category-group">
+        <h3>Периферия</h3>
+        <div id="peripherals-container" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="cloud" class="info-blocks">
+      <div class="info-card glass">
+        <h3>О нас</h3>
+        <p>Создаем будущее с 2026 года.</p>
+      </div>
+      <div class="info-card glass">
+        <h3>Cloud +</h3>
+        <p>Безлимит для ваших данных.</p>
+      </div>
+      <div class="info-card glass">
+        <h3>Карьера</h3>
+        <p>Стань частью команды.</p>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2 class="logo">AETHERIS</h2>
+          <p class="footer-slogan">Будущее начинается сегодня.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/luilui02050/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://discord.gg/bMXRDQb7" target="_blank"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a href="https://github.com/Sava132" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
         </div>
+        <div class="footer-links">
+          <div class="f-col">
+            <h4>Компания</h4>
+            <a href="#shop">Телефоны</a>
+            <a href="#shop">Компьютеры</a>
+            <a href="#shop">Мониторы</a>
+          </div>
+          <div class="f-col">
+            <h4>Навигация</h4>
+            <a href="#cloud">Cloud +</a>
+            <a href="#cloud">О нас</a>
+            <a href="#cloud">Карьера</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aetheris Technologies. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <div id="cart-side-panel" class="cart-panel">
+      <div class="cart-header">
+        <h2>Ваш заказ</h2>
+        <span class="close-panel" onclick="toggleCart()">&times;</span>
+      </div>
+      <div id="cart-items" class="cart-items-container"></div>
+      <div class="cart-footer">
+        <div class="total-price">Итого: <span id="total-sum">0</span> $</div>
+        <button class="btn-pay">Оформить покупку</button>
+      </div>
     </div>
 
+    <div id="auth-modal" class="modal-overlay hidden">
+      <div class="auth-content glass">
+        <span class="close-panel" onclick="toggleAuthModal()">&times;</span>
+        <h2 id="auth-title" style="margin-bottom: 20px; color: var(--accent)">
+          Вход
+        </h2>
+
+        <div class="auth-group">
+          <input
+            type="email"
+            id="auth-email"
+            placeholder="Ваш Email"
+            class="spec-input"
+          />
+        </div>
+
+        <div class="auth-group">
+          <input
+            type="password"
+            id="auth-password"
+            placeholder="Пароль"
+            class="spec-input"
+          />
+          <i
+            class="fa-solid fa-eye password-toggle"
+            onclick="togglePassword('auth-password', this)"
+          ></i>
+        </div>
+
+        <div id="confirm-group" class="auth-group hidden">
+          <input
+            type="password"
+            id="auth-password-confirm"
+            placeholder="Подтвердите пароль"
+            class="spec-input"
+          />
+          <i
+            class="fa-solid fa-eye password-toggle"
+            onclick="togglePassword('auth-password-confirm', this)"
+          ></i>
+        </div>
+
+        <div id="otp-group" class="auth-group hidden">
+          <input
+            type="text"
+            id="auth-otp"
+            placeholder="00000000"
+            class="spec-input"
+            maxlength="8"
+            style="text-align: center; font-size: 1.5rem; letter-spacing: 10px"
+          />
+          <p
+            style="
+              font-size: 12px;
+              opacity: 0.6;
+              text-align: center;
+              margin-top: 10px;
+            "
+          >
+            Введите 8-значный код из письма
+          </p>
+          <button
+            type="button"
+            onclick="cancelOTP()"
+            style="
+              background: none;
+              border: none;
+              color: var(--accent);
+              cursor: pointer;
+              font-size: 12px;
+              display: block;
+              margin: 15px auto 0;
+              text-decoration: underline;
+              opacity: 0.8;
+            "
+          >
+            Изменить почту / Назад
+          </button>
+        </div>
+
+        <button
+          class="btn-glow"
+          id="auth-main-btn"
+          onclick="handleAuthSubmit()"
+          style="width: 100%; margin-top: 15px"
+        >
+          Продолжить
+        </button>
+
+        <p
+          id="auth-toggle-text"
+          onclick="switchAuthMode()"
+          style="
+            font-size: 12px;
+            margin-top: 15px;
+            cursor: pointer;
+            opacity: 0.6;
+          "
+        >
+          Нет аккаунта? Зарегистрироваться
+        </p>
+      </div>
+    </div>
+    <div id="notification-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
-</body>
+  </body>
 </html>
