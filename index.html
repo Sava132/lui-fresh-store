@@ -141,7 +141,8 @@
       <div id="cart-items" class="cart-items-container"></div>
       <div class="cart-footer">
         <div class="total-price">Итого: <span id="total-sum">0</span> $</div>
-        <button class="btn-pay">Оформить покупку</button>
+
+        <button class="btn-pay" onclick="checkout()">Оформить покупку</button>
       </div>
     </div>
 
@@ -174,17 +175,64 @@
           ></i>
         </div>
 
-        <div id="confirm-group" class="auth-group hidden">
-          <input
-            type="password"
-            id="auth-password-confirm"
-            placeholder="Подтвердите пароль"
-            class="spec-input"
-          />
-          <i
-            class="fa-solid fa-eye password-toggle"
-            onclick="togglePassword('auth-password-confirm', this)"
-          ></i>
+        <div id="reg-fields" class="hidden">
+          <div class="auth-group">
+            <input
+              type="password"
+              id="auth-password-confirm"
+              placeholder="Подтвердите пароль"
+              class="spec-input"
+            />
+            <i
+              class="fa-solid fa-eye password-toggle"
+              onclick="togglePassword('auth-password-confirm', this)"
+            ></i>
+          </div>
+
+          <div class="auth-group fields-grid">
+            <input
+              type="text"
+              id="reg-first-name"
+              placeholder="Имя"
+              class="spec-input"
+            />
+            <input
+              type="text"
+              id="reg-last-name"
+              placeholder="Фамилия"
+              class="spec-input"
+            />
+            <input
+              type="date"
+              id="reg-birthday"
+              class="spec-input"
+              title="Дата рождения"
+            />
+            <input
+              type="text"
+              id="reg-location"
+              placeholder="Проживание"
+              class="spec-input"
+            />
+            <input
+              type="url"
+              id="reg-github"
+              placeholder="GitHub URL"
+              class="spec-input"
+            />
+            <input
+              type="text"
+              id="reg-instagram"
+              placeholder="Instagram"
+              class="spec-input"
+            />
+            <input
+              type="text"
+              id="reg-discord"
+              placeholder="Discord Tag"
+              class="spec-input"
+            />
+          </div>
         </div>
 
         <div id="otp-group" class="auth-group hidden">
@@ -242,6 +290,7 @@
             margin-top: 15px;
             cursor: pointer;
             opacity: 0.6;
+            text-align: center;
           "
         >
           Нет аккаунта? Зарегистрироваться
